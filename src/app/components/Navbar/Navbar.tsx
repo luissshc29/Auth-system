@@ -13,7 +13,7 @@ export default function Navbar() {
             {session.data ? (
                 <Link href="/api/auth/signout">Logout</Link>
             ) : (
-                <Link href="/api/auth/signin">Login</Link>
+                <Link href="/client">Login</Link>
             )}
         </div>
     );

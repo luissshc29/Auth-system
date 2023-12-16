@@ -1,3 +1,4 @@
+import { db } from "@/app/lib/db";
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GitHubProvider from "next-auth/providers/github";
@@ -18,27 +19,35 @@ export const options: NextAuthOptions = {
             credentials: {
                 username: {
                     type: "text",
-                    placeholder: "admin",
+                    placeholder: "Username",
                     label: "Username:",
                 },
                 password: {
                     type: "password",
-                    placeholder: "12345",
+                    placeholder: "Password",
                     label: "Password:",
                 },
             },
             async authorize(credentials) {
-                const user = { id: "1", name: "admin", password: "12345" };
-                if (
-                    credentials?.username === user.name &&
-                    credentials?.password === user.password
-                ) {
-                    return user;
-                } else {
-                    return null;
+                const user = await db.user.findUnique({
+                    where: {
+                        username: credentials?.username,
+                        password: credentials?.password,
+                    },
+                });
+                if (user) {
+                    return {
+                        id: user.id.toString(),
+                        name: user.username,
+                        password: user.password,
+                    };
                 }
+                return null;
             },
         }),
     ],
+    pages: {
+        signIn: "/",
+    },
     secret: process.env.NEXTAUTH_SECRET,
 };

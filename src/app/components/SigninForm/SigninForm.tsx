@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaGithub } from "react-icons/fa";
+import Button from "../Button/Button";
 
 export default function SigninForm() {
     const [loading, setLoading] = useState<boolean>(false);
@@ -110,10 +111,10 @@ export default function SigninForm() {
                     Login with Google
                 </button>
             </div>
-            <button
+            <Button
                 disabled={loading}
                 type="submit"
-                className="rounded-xl p-2 w-2/3 md:w-1/2 bg-blue-600 text-white shadow-lg shadow-neutral-400 flex items-center justify-center"
+                className="bg-blue-600 text-white w-2/3 md:w-1/2 "
             >
                 {loading ? (
                     <>
@@ -139,7 +140,7 @@ export default function SigninForm() {
                 ) : (
                     <p>Login</p>
                 )}
-            </button>
+            </Button>
         </form>
     );
 }

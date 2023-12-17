@@ -4,6 +4,7 @@ import { InputData } from "@/utils/types/InputData";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Button from "../Button/Button";
 
 export default function SignupForm() {
     const [loading, setLoading] = useState<boolean>(false);
@@ -80,10 +81,10 @@ export default function SignupForm() {
                 {...register("password", { required: true })}
                 className="p-2 rounded-xl w-4/5"
             />
-            <button
+            <Button
                 disabled={loading}
                 type="submit"
-                className="rounded-xl p-2 w-2/3 md:w-1/2 bg-blue-600 text-white shadow-lg shadow-neutral-400 flex items-center justify-center"
+                className="bg-blue-600 text-white w-2/3 md:w-1/2 "
             >
                 {loading ? (
                     <>
@@ -109,7 +110,7 @@ export default function SignupForm() {
                 ) : (
                     <p>Sign up</p>
                 )}
-            </button>
+            </Button>
         </form>
     );
 }

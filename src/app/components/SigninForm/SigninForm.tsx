@@ -97,7 +97,7 @@ export default function SigninForm() {
                     Login with GitHub
                 </button>
                 <button
-                    className="px-3 py-3 border flex items-center gap-3 dark:border-slate-700 rounded-2xl border-slate-400 text-black dark:text-slate-300 hover:shadow transition duration-150"
+                    className="px-3 py-3 border flex items-center gap-3 dark:border-slate-700 rounded-2xl border-slate-400 text-slate-900 hover:shadow transition duration-150"
                     onClick={() => logIn("google")}
                     type="button"
                 >

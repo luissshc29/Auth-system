@@ -43,15 +43,15 @@ export default function Client() {
                                     Are you sure you want to logout?
                                 </DialogDescription>
                             </DialogHeader>
-                            <DialogFooter className="grid grid-cols-2">
+                            <DialogFooter className="grid grid-cols-2 justify-items-center">
                                 <Button
-                                    className=" bg-red-600 text-white w-full"
+                                    className=" bg-red-600 text-white w-4/5"
                                     onClick={() => signOut()}
                                 >
                                     Logout
                                 </Button>
-                                <DialogClose className="w-full">
-                                    <Button className="text-red-600 w-full">
+                                <DialogClose className="w-4/5">
+                                    <Button className="text-red-600 w-full shadow-none font-semibold">
                                         Cancel
                                     </Button>
                                 </DialogClose>

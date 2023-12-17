@@ -83,7 +83,7 @@ export default function SignupForm() {
             <button
                 disabled={loading}
                 type="submit"
-                className="rounded-xl p-2 w-1/2 bg-blue-600 text-white shadow-lg shadow-neutral-400 flex items-center justify-center"
+                className="rounded-xl p-2 w-2/3 md:w-1/2 bg-blue-600 text-white shadow-lg shadow-neutral-400 flex items-center justify-center"
             >
                 {loading ? (
                     <>

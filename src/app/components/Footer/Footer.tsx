@@ -8,7 +8,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center items-center gap-2 lg:col-span-2 mt-auto mb-0 py-6 w-full text-neutral-700 text-xs">
+    <footer className="flex justify-center items-center gap-2 lg:col-span-2 mt-auto mb-0 py-6 w-full text-neutral-700 text-sm">
       <div className="flex items-center gap-[3px] h-full">
         Coded by{" "}
         <a
